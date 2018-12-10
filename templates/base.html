@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+</head>
+<body style="background-color: #FBFBFA">
+<div style="background-color: #526652; color: white; font-size: 18px; font-family: century ;margin-top: 10px; text-align: center;" id = "title">
+			<p><b style="font-size: 22px">I</b>NTELLECTUAL <b style="font-size: 22px">T</b>ECHNOLOGIES <b style="font-size: 22px">T</b>ODAY AND <b style="font-size: 22px">F</b>UTURE</p>
+</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="navbar navbar-inverse" style="background-color: #19231A; box-shadow: 0 0 6px" id = "navbar">
+		
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+							<span class="sr-only">Open navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="responsive-menu">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Главная</a>
+							</li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Новости</a>
+								<ul class="dropdown-menu" style="background-color: #D8DAD8;">
+									<li><a href="#">Number 1</a></li>
+									<li><a href="#">Number 2</a></li>
+									<li><a href="#">Number 3</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Number 4</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Видео</a>
+								<ul class="dropdown-menu" style="background-color: #D8DAD8;">
+									<li><a href="#">Number 1</a></li>
+									<li><a href="#">Number 2</a></li>
+									<li><a href="#">Number 3</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Number 4</a></li>
+								</ul>
+							</li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Архив</a>
+								<ul class="dropdown-menu" style="background-color: #D8DAD8;">
+									<li><a href="#">Number 1</a></li>
+									<li><a href="#">Number 2</a></li>
+									<li><a href="#">Number 3</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Number 4</a></li>
+								</ul>
+							</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Разное</a>
+									<ul class="dropdown-menu" style="background-color: #D8DAD8;">
+										<li><a href="#">Пункт 1</a></li>
+										<li><a href="#">Пункт 2</a></li>
+										<li><a href="#">Пункт 3</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Пункт 4</a></li>
+									</ul>
+								</li>
+						</ul>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About us</a></li>
+				<li><a href="#">Contacts</a></li>
+				<li><a href="#">Another</a></li>
+			</ol>
+		</div>
+	</div>
+	<div class="container" style="height: 800px">
+		<div style="background-color: #E7FCE8;">
+	{% block content %}		
+	{% endblock %}			
+		</div>
+	</div>
+
+	<!-------------------------ФУТЕР-------------------------------------------------->
+	
+	<script src="/static/js/jquery-3.3.1.min.js"></script>
+	<script src = "/static/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#title").on("mouseenter", function(){
+				$("#title").css("background-color", "green");
+			});
+
+			$("#navbar").on("mouseenter", function(){
+				$("#title").css("background-color", "#526652");
+			});
+		});
+	</script>
+</body>
+</html>

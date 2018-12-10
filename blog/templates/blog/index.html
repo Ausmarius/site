@@ -1,0 +1,23 @@
+{% extends 'blog/base_blog.html'%}
+
+	
+{% block content %}
+	{% for name in names %}
+		<div style="padding: 5px 0px 0px 25%; word-spacing: 1px"><p>Hello, {{ name }}!</p></div>
+	{% endfor %}
+{% endblock %}
+
+{% block content1 %}
+	<div class="container">
+		<div class="row">
+			<div style="background-color: #F1EBF5">
+				<center>
+					<div style="color: #060B67; padding-top: 18px;">				
+						INVITING PAGE
+					</div>
+					<hr>	
+				</center>
+			</div>
+		</div>
+	</div>
+{% endblock %}
