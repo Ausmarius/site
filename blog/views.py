@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from . models import Post
 
 def posts_list(request):
 
@@ -11,7 +12,15 @@ def posts_list(request):
 	# f.close()
 	#---------------------------------------------------------------------
 
-	x = ["Serg", "Anton", "Sasha", "Olya", "Igor", "Maxim"]
-	n = {"names":x}#Если создать переменную и загрузить в нее словарь, то ее можно использовать далее
-	return render(request, 'blog/index.html', context = n)#Context позволяет использовать переменную
+	# x = ["Serg", "Anton", "Sasha", "Olya", "Igor", "Maxim"]
+	# n = {"names":x}#Если создать переменную и загрузить в нее словарь, то ее можно использовать далее
+	# return render(request, 'blog/index.html', context = n)#Context позволяет использовать переменную
 
+	posts = Post.objects.all()
+	return render(request, 'blog/index.html', context = {'posts': posts})
+
+
+
+def post_detail(request, slug):
+	post = Post.objects.get(slug__iexact=slug)	
+	return render(request, 'blog/post_detail.html', context = {'post': post})
